@@ -1,7 +1,8 @@
 'use client'
 
 export default function Home() {
-
+  // service_6dsq4t9
+  // template_a0me2kw
   const handleSubmit = (e:any) => {
     e.preventDefault();
 
@@ -12,7 +13,6 @@ export default function Home() {
     alert(`Full name: ${fullName}\nEmail: ${email}\nMessage: ${message}`);
 
   }
-
 
   return (
     <div className="min-h-screen bg-black text-white">
