@@ -1,18 +1,22 @@
-'use client'
+"use client";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
-  // service_6dsq4t9
-  // template_a0me2kw
-  const handleSubmit = (e:any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const fullName = e.target.fullName.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
-
-    alert(`Full name: ${fullName}\nEmail: ${email}\nMessage: ${message}`);
-
-  }
+    const res = await emailjs.sendForm(
+      "service_6dsq4t9", // service ID
+      "template_a0me2kw", // template ID
+      e.target,
+      "Kba6m4BVFNbdasMZC" //public ID
+    );
+    if (res.status === 200) {
+      alert("Email sent succesfully!");
+    } else {
+      alert("Email failed to send");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
